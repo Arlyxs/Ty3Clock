@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ty3Clock</title>
+
+    <link rel="stylesheet" href="/Clock.css" type="text/css" />
+    <script type="text/javascript" src="/Clock.js"> </script>
+
+
+    <!-- creates header for the site with image -->
+    <div id="header">
+
+        <div class="posts">
+            <div class="logo" />
+        </div>
+
+        <!--div class header ends-->
+
+        <!-- creates page content container-->
+        <div class="content">
+
+            <div class="content">
+
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <!-- styles the clock date and time elements -->
+            <style>
+                #clock {
+                    font-family: Arial, Helvetica, sans-serif;
+                    font-size: 36px;
+                    color: blue;
+                    text-align: center;
+                }
+            </style>
+
+            <!-- creates clock and day elements  -->
+            <script>
+                function updateClock() {
+                    let date = new Date();
+                    let day = date.getDay();
+                    let month = date.getMonth() + 1;
+                    let year = date.getFullYear();
+                    let hours = date.getHours();
+                    let minutes = date.getMinutes();
+                    let seconds = date.getSeconds();
+                    if (hours < 10) {
+                        hours = "0" + hours;
+                    }
+                    if (minutes < 10) {
+                        minutes = "0" + minutes;
+                    }
+                    if (seconds < 10) {
+                        seconds = "0" + seconds;
+                    }
+                    const clock = document.getElementById("clock");
+                    clock.innerHTML = hours + ":" + minutes + ":" + seconds + "<br>" + day + "/" + month + "/" + year;
+                }
+                setInterval(updateClock, 1000);
+            </script>
+</head>
+
+<body>
+    <div id="clock"></div>
+</body>
+
+</html>
